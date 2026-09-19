@@ -10,17 +10,41 @@
 
 ## สารบัญ
 
+- [ภาพหน้าจอ](#ภาพหน้าจอ)
 - [Stack](#stack)
 - [เครื่องที่ต้องมี](#เครื่องที่ต้องมี)
 - [เริ่มใช้งาน](#เริ่มใช้งาน)
 - [เริ่มโปรเจกต์ใหม่จาก starter นี้](#เริ่มโปรเจกต์ใหม่จาก-starter-นี้)
 - [คำสั่งที่ใช้บ่อย](#คำสั่งที่ใช้บ่อย)
 - [โครงสร้างโฟลเดอร์](#โครงสร้างโฟลเดอร์)
+- [ตัวอย่าง component](#ตัวอย่าง-component)
 - [แนวทางการเขียนโค้ด](#แนวทางการเขียนโค้ด)
 - [การทดสอบ](#การทดสอบ)
 - [Build สำหรับ release](#build-สำหรับ-release)
 - [Workaround ที่ใส่ไว้ (อ่านก่อนอัปเกรด)](#workaround-ที่ใส่ไว้-อ่านก่อนอัปเกรด)
 - [แก้ปัญหาที่พบบ่อย](#แก้ปัญหาที่พบบ่อย)
+
+## ภาพหน้าจอ
+
+ภาพจาก Android emulator (Android 17) ภาษาไทย ธีมสว่าง เว้นแต่ระบุ ตัวอย่างโค้ดของแต่ละ component อยู่ที่ [ตัวอย่าง component](#ตัวอย่าง-component)
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/login.jpg" width="240" alt="Login"><br>Login</td>
+    <td align="center"><img src="docs/screenshots/home.jpg" width="240" alt="หน้าแรก"><br>หน้าแรก</td>
+    <td align="center"><img src="docs/screenshots/products.jpg" width="240" alt="รายการสินค้า (ค้นหา / กรองหมวด)"><br>รายการสินค้า (ค้นหา / กรองหมวด)</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/product-detail.jpg" width="240" alt="รายละเอียดสินค้า"><br>รายละเอียดสินค้า</td>
+    <td align="center"><img src="docs/screenshots/profile.jpg" width="240" alt="โปรไฟล์"><br>โปรไฟล์</td>
+    <td align="center"><img src="docs/screenshots/settings.jpg" width="240" alt="ตั้งค่า (ธีม / ภาษา / แจ้งเตือน)"><br>ตั้งค่า (ธีม / ภาษา / แจ้งเตือน)</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/login-validation.jpg" width="240" alt="error ของฟอร์ม (zod + i18n)"><br>error ของฟอร์ม (zod + i18n)</td>
+    <td align="center"><img src="docs/screenshots/home-dark.jpg" width="240" alt="ธีมมืด: หน้าแรก"><br>ธีมมืด: หน้าแรก</td>
+    <td align="center"><img src="docs/screenshots/settings-dark.jpg" width="240" alt="ธีมมืด: ตั้งค่า"><br>ธีมมืด: ตั้งค่า</td>
+  </tr>
+</table>
 
 ## Stack
 
@@ -136,6 +160,129 @@ jest/             setup (mock native module), resolver
 maestro/          E2E flows
 patches/          patch-package
 ```
+
+## ตัวอย่าง component
+
+import ทุกตัวจาก `@/components/ui` ดูครบทุก variant / สถานะได้ที่หน้า **Component Gallery** ในแอป (หน้า Login > "ดูชุดคอมโพเนนต์", โปรไฟล์ > "ตัวอย่างคอมโพเนนต์" หรือ `rnstarter://gallery`) โค้ดของหน้านี้อยู่ใน `src/features/gallery/sections/` ใช้เป็นตัวอย่างได้ทั้งหมด
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/gallery-top.jpg" width="240" alt="Gallery: สลับธีม / ภาษา, Text"><br>Gallery: สลับธีม / ภาษา, Text</td>
+    <td align="center"><img src="docs/screenshots/icons.jpg" width="240" alt="Icon"><br>Icon</td>
+    <td align="center"><img src="docs/screenshots/buttons.jpg" width="240" alt="Button"><br>Button</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/inputs.jpg" width="240" alt="TextField"><br>TextField</td>
+    <td align="center"><img src="docs/screenshots/otp-checkbox.jpg" width="240" alt="OTPInput, Checkbox"><br>OTPInput, Checkbox</td>
+    <td align="center"><img src="docs/screenshots/choices.jpg" width="240" alt="RadioGroup, Switch, SegmentedControl"><br>RadioGroup, Switch, SegmentedControl</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/cards.jpg" width="240" alt="Card"><br>Card</td>
+    <td align="center"><img src="docs/screenshots/badges.jpg" width="240" alt="Badge, CountBadge"><br>Badge, CountBadge</td>
+    <td align="center"><img src="docs/screenshots/list.jpg" width="240" alt="ListItem"><br>ListItem</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/feedback.jpg" width="240" alt="Toast"><br>Toast</td>
+    <td align="center"><img src="docs/screenshots/dialog.jpg" width="240" alt="Dialog (confirm)"><br>Dialog (confirm)</td>
+    <td align="center"><img src="docs/screenshots/select-sheet.jpg" width="240" alt="Select (BottomSheet)"><br>Select (BottomSheet)</td>
+  </tr>
+</table>
+
+### ตัวอักษร / Icon / ปุ่ม
+
+```tsx
+<Text variant="h2">หัวข้อ</Text>
+<Text variant="body" color="textSecondary">ข้อความรอง</Text>
+<Text variant="label" weight="semibold">ป้ายชื่อ</Text>
+
+<Icon name="bell" size="md" color="primary" />
+
+<Button title="ชำระเงิน" onPress={pay} />
+<Button title="ยกเลิก" variant="outline" size="sm" onPress={cancel} />
+<Button title="กำลังบันทึก" loading />
+<Button title="ใส่ตะกร้า" left={<Icon name="shopping-cart" color="onPrimary" />} fullWidth onPress={addToCart} />
+<IconButton icon="heart" accessibilityLabel="ถูกใจ" onPress={like} />
+```
+
+- `variant` ของ Button: `primary` / `secondary` / `outline` / `ghost` / `danger`, `size`: `sm` / `md` / `lg`
+- `variant` ของ Text อยู่ใน `typeScale` (`display`, `h1`-`h3`, `title`, `body`, `bodySmall`, `label`, `caption` ...) ขนาดไทยไม่ต่ำกว่า 14
+
+### ช่องกรอกข้อมูล
+
+```tsx
+<TextField label="อีเมล" value={email} onChangeText={setEmail} keyboardType="email-address" errorText={emailError} />
+<TextField label="รหัสผ่าน" type="password" value={password} onChangeText={setPassword} />
+<TextField label="ค้นหาร้านค้า" leftIcon="search" clearable value={query} onChangeText={setQuery} />
+
+<Select
+  label="จังหวัด"
+  options={[{ label: 'กรุงเทพมหานคร', value: 'bkk' }, { label: 'เชียงใหม่', value: 'cnx' }]}
+  value={province}
+  onChange={setProvince}
+/>
+
+<OTPInput label="รหัสยืนยัน" length={6} onComplete={verify} />
+<Checkbox label="ยอมรับเงื่อนไข" checked={accepted} onChange={setAccepted} />
+<RadioGroup
+  label="วิธีจัดส่ง"
+  options={[{ label: 'จัดส่งปกติ', value: 'normal' }, { label: 'จัดส่งด่วน', value: 'express' }]}
+  value={shipping}
+  onChange={setShipping}
+/>
+<Switch label="แจ้งเตือนผ่านแอป" value={notify} onValueChange={setNotify} />
+<SegmentedControl
+  options={[{ label: 'วัน', value: 'day' }, { label: 'สัปดาห์', value: 'week' }]}
+  value={range}
+  onChange={setRange}
+/>
+```
+
+- ทุกช่องมี `label` / `helperText` / `errorText` / `disabled` เหมือนกัน
+- ใช้กับ react-hook-form: `FormTextField` / `FormSelect` / `FormOTPInput` / `FormCheckbox` (ดู [Form](#form))
+
+### การแสดงผล
+
+```tsx
+<Card header={<Text variant="title">คำสั่งซื้อ #1024</Text>} onPress={openOrder}>
+  <Text>กาแฟคั่วกลาง 2 ถุง</Text>
+</Card>
+
+<Badge label="สำเร็จ" status="success" />
+<Badge label="ยกเลิก" status="danger" variant="solid" />
+<Chip label="ใกล้ฉัน" icon="map-pin" selected={nearby} onPress={toggleNearby} />
+<Avatar uri={user.image} name="สมชาย ใจดี" size="md" />
+<ListItem left="languages" title="ภาษา" value="ไทย" chevron onPress={openLanguage} />
+<Skeleton lines={3} />
+```
+
+- Avatar ที่ไม่มีรูปแสดงตัวย่อจากชื่อ (ชื่อไทย "สมชาย ใจดี" -> "สจ")
+
+### แจ้งเตือน / Dialog / BottomSheet
+
+```tsx
+const toast = useToast();
+toast.success('บันทึกแล้ว');
+toast.error('บันทึกไม่สำเร็จ', { title: 'ผิดพลาด' });
+
+const dialog = useDialog();
+const ok = await dialog.confirm({
+  title: 'ลบที่อยู่นี้?',
+  message: 'ลบแล้วกู้คืนไม่ได้',
+  destructive: true,
+});
+
+const sheetRef = useRef<BottomSheetRef>(null);
+<Button title="ตัวกรอง" onPress={() => sheetRef.current?.present()} />
+<BottomSheet ref={sheetRef} title="ตัวกรอง" snapPoints={['50%']}>
+  ...
+</BottomSheet>
+
+<EmptyState icon="shopping-cart" title="ยังไม่มีสินค้าในตะกร้า" actionLabel="เลือกซื้อสินค้า" onAction={goShopping} />
+<ErrorState error={error} onRetry={refetch} />
+```
+
+- `useToast` / `useDialog` ใช้ได้ทุกหน้าจอ (provider อยู่ใน `AppProviders`)
+- `ErrorState` แปลข้อความจาก `error.kind` ของ `ApiError` ให้เอง
 
 ## แนวทางการเขียนโค้ด
 
@@ -256,5 +403,7 @@ const { control, handleSubmit } = useForm<LoginFormValues>({ resolver: zodResolv
 - **Android build: ดาวน์โหลด SDK ไม่สำเร็จ (`Error reading Zip content`)**: ไฟล์ดาวน์โหลดเสีย ติดตั้งใหม่ด้วย `sdkmanager --install "platforms;android-37.0"`
 - **Test ขึ้น `... could not be found` / `is not linked`**: native module ใหม่ยังไม่มี mock ใน `jest/setup.js`
 - **ปุ่มไม่มีพื้นหลังบนเครื่องจริง แต่ test ผ่าน**: Pressable ที่ใช้ style function ขาด `cssInterop={false}`
-- **เปิด AVD แล้ว adb ต่อไม่ได้**: พอร์ต 5554/5555 ถูกโปรแกรมอื่นใช้อยู่ (เช่น BlueStacks) ให้เปิดด้วย `emulator -avd <ชื่อ> -port 5560` แล้วใช้ `ANDROID_SERIAL=emulator-5560`
+- **เปิด AVD แล้ว adb ต่อไม่ได้**: พอร์ต 5554/5555 ถูกโปรแกรมอื่นใช้อยู่ (เช่น BlueStacks) ให้เปิดด้วย `emulator -avd <ชื่อ> -port 5560`
+- **`run-android` ขึ้น `InstallException: Broken pipe` / `Failed to start the app`**: มีหลายเครื่องใน `adb devices` และมีเครื่องที่ต่อไม่ได้ (เช่น BlueStacks: `adb -s <id> shell` ขึ้น `error: closed`) คำสั่งนี้ติดตั้ง / เปิดแอปทุกเครื่องและไม่สน `ANDROID_SERIAL` ให้ระบุเครื่อง `npm run android -- --device <id>`
+- **ข้อความของ TextInput ที่ซ่อนไว้โผล่เป็นสีดำบน Android**: ตั้งสีข้อความเป็น `transparent` ใช้ `INVISIBLE_TEXT_COLOR` แทน
 - **iOS: ตัวอย่าง deep link ผ่าน Maestro `openLink` ขึ้นกล่อง "Open in ...?"**: เป็นกล่องยืนยันของ Safari ใช้ `xcrun simctl openurl booted "rnstarter://..."` แทนเพื่อเปิดตรง

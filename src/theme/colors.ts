@@ -160,4 +160,11 @@ export const darkColors: ColorTokens = {
   transparent: 'transparent',
 };
 
+/**
+ * สีข้อความที่ต้องมองไม่เห็น (เช่น TextInput ที่ซ่อนไว้ใต้กล่อง OTP): ห้ามใช้ colors.transparent เป็นสีข้อความ
+ * Android (New Arch) ใช้ค่า 0 แทน "ไม่ได้ตั้งสี" และ 'transparent' ก็คือ 0 ข้อความเลยถูกวาดเป็นสีดำ
+ * alpha 1/255 ไม่ใช่ 0 จึงถูกส่งถึง native และตาเห็นไม่ต่างจากโปร่งใส
+ */
+export const INVISIBLE_TEXT_COLOR = '#00000001';
+
 export type StatusColor = 'primary' | 'success' | 'warning' | 'danger' | 'info';

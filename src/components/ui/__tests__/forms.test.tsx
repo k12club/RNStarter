@@ -20,6 +20,7 @@ import { Select } from '@/components/ui/Select';
 import { Switch } from '@/components/ui/Switch';
 import { TextField } from '@/components/ui/TextField';
 import { renderWithProviders } from '@/test-utils/renderWithProviders';
+import { INVISIBLE_TEXT_COLOR } from '@/theme';
 
 // mock ของ bottom-sheet (jest/setup.js) เป็น class: spy present / dismiss ได้ที่ prototype
 type SheetModalMock = {
@@ -392,6 +393,14 @@ describe('OTPInput', () => {
 
     expect(onChange).toHaveBeenLastCalledWith('1234');
     expect(onComplete).toHaveBeenCalledWith('1234');
+  });
+
+  test('ช่องที่ซ่อนไว้ไม่ใช้สีข้อความ transparent (Android วาดเป็นสีดำทับกล่องแรก)', async () => {
+    await renderWithProviders(<OTPInput label="รหัส OTP" value="1221" />);
+
+    const input = screen.getByLabelText('รหัส OTP');
+    expect(input).toHaveStyle({ color: INVISIBLE_TEXT_COLOR });
+    expect(input).not.toHaveStyle({ color: 'transparent' });
   });
 });
 

@@ -14,6 +14,7 @@ React Native 0.87 CLI starter (not Expo). คำอธิบายเต็ม /
 - `<Text>` ของแอปตั้ง font/size/color ผ่าน style เสมอ: className ด้านตัวอักษรบน Text ไม่มีผล (style ชนะ className) ใช้ props
 - Pressable ที่ใช้ `style={({ pressed }) => ...}` ต้องมี `cssInterop={false}` (NativeWind v4 ทิ้ง style function บนเครื่องจริง) และ Jest มองไม่เห็นปัญหานี้เพราะ interop ปิดตอน test: งาน UI ต้องดูบน simulator / emulator ด้วยเสมอ
 - สี: token จาก `src/theme/colors.ts` เท่านั้น (className: ชื่อใน `src/theme/tailwindColors.js`) ไม่มี palette ของ Tailwind
+- ห้ามใช้ `colors.transparent` เป็นสีข้อความ / `selectionColor`: Android (New Arch) ถือว่าสีค่า 0 = ไม่ได้ตั้งสี แล้ววาดข้อความเป็นสีดำ ใช้ `INVISIBLE_TEXT_COLOR` (พื้นหลัง / เส้นขอบใช้ `transparent` ได้)
 - ข้อความไทย >= 14 ผ่าน typeScale; ตัวอักษรไทยต้องมี lineHeight ~1.5x ไม่งั้นสระถูกตัด
 - i18n: key ใน `locales/th` กับ `locales/en` ต้องตรงกันทุก namespace (มี test); ภาษาไทยมี plural แค่ `_other`; ห้ามใช้ formatter `relativetime`/`list` ของ i18next (Hermes ไม่มี Intl.RelativeTimeFormat) ใช้ `formatRelative()`
 - `index.js` บรรทัดแรกต้องเป็น `import 'intl-pluralrules'`
@@ -34,7 +35,7 @@ React Native 0.87 CLI starter (not Expo). คำอธิบายเต็ม /
 - `patches/` apply ตอน `npm install` (nitro-modules: iOS < 18 crash, css-interop: ImageBackground warning); สร้างใหม่ด้วย `npm run patch:nitro` / `npm run patch:css-interop` (ไม่งั้นไฟล์ build / cache ติดเข้า patch)
 - deep link: `getInitialURL` ใน `src/navigation/linking.ts` ตั้ง timeout เอง (ค่าเริ่มต้น 150ms ของ React Navigation ทำลิงก์ตอน cold start หาย)
 - `xcode-select` ของเครื่อง palm ชี้ CommandLineTools: รันคำสั่ง iOS ด้วย `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`
-- `emulator-5554` (SM-G998B) ในเครื่อง palm คือ BlueStacks ที่จองพอร์ต 5555 อยู่: เปิด AVD ด้วย `emulator -avd Medium_Phone -port 5560 -no-window` แล้วใช้ `ANDROID_SERIAL=emulator-5560`
+- มีหลายเครื่องใน `adb devices`: `run-android` ติดตั้ง / เปิดแอปทุกเครื่อง (ไม่สน `ANDROID_SERIAL`) เครื่องเดียวพัง = ทั้งคำสั่งพัง ใช้ `--device <id>`
 - ตรวจ runtime: `maestro --device <id> test maestro/smoke.yaml` (iOS / Android) และอ่าน console ของแอปผ่าน CDP ที่ `http://localhost:8081/json/list` (ต้องส่ง header `Origin: http://localhost:8081`)
 
 ## test

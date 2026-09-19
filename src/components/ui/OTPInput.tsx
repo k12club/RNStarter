@@ -9,7 +9,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import { makeStyles, useTheme } from '@/theme';
+import { INVISIBLE_TEXT_COLOR, makeStyles } from '@/theme';
 import { onlyDigits } from '@/utils/validation';
 
 import { Text } from './Text';
@@ -71,8 +71,9 @@ const useStyles = makeStyles(theme => ({
   },
   // ช่องจริงวางทับกล่องทั้งหมด ข้อความ/เคอร์เซอร์โปร่งใส
   // ไม่ใช้ opacity: 0 เพราะ iOS จะไม่ส่ง touch ให้ view ที่โปร่งใสทั้งหมด (กดค้างเพื่อวางไม่ได้)
+  // สีข้อความต้องเป็น INVISIBLE_TEXT_COLOR: 'transparent' บน Android ถูกวาดเป็นสีดำ
   hiddenInput: {
-    color: theme.colors.transparent,
+    color: INVISIBLE_TEXT_COLOR,
     backgroundColor: theme.colors.transparent,
     fontSize: theme.typeScale.body.fontSize,
   },
@@ -100,7 +101,6 @@ export function OTPInput({
   testID,
   ref,
 }: OTPInputProps) {
-  const theme = useTheme();
   const styles = useStyles();
   const [innerValue, setInnerValue] = useState('');
   const [focused, setFocused] = useState(false);
@@ -190,7 +190,7 @@ export function OTPInput({
           autoComplete="sms-otp"
           autoCorrect={false}
           caretHidden
-          selectionColor={theme.colors.transparent}
+          selectionColor={INVISIBLE_TEXT_COLOR}
           accessibilityLabel={accessibilityLabel ?? label}
           accessibilityHint={errorText ?? helperText}
           accessibilityState={{ disabled }}

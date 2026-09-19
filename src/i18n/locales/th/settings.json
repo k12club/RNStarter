@@ -1,0 +1,40 @@
+{
+  "title": "ตั้งค่า",
+  "appearance": {
+    "title": "รูปแบบการแสดงผล",
+    "description": "เลือกธีมสว่าง ธีมมืด หรือให้เปลี่ยนตามการตั้งค่าของเครื่อง",
+    "label": "ธีม",
+    "system": "ตามเครื่อง",
+    "light": "สว่าง",
+    "dark": "มืด"
+  },
+  "language": {
+    "title": "ภาษา",
+    "description": "ภาษาที่ใช้แสดงผลทั้งแอป"
+  },
+  "notifications": {
+    "title": "การแจ้งเตือน",
+    "demoCaption": "ส่วนนี้เป็นตัวอย่างการใช้ Switch เท่านั้น ค่าที่เลือกจะไม่ถูกบันทึกและจะไม่มีการส่งการแจ้งเตือนจริง",
+    "pushLabel": "การแจ้งเตือนแบบพุช",
+    "pushDescription": "แจ้งเมื่อมีคำสั่งซื้อหรือข้อความใหม่",
+    "emailLabel": "อีเมลสรุปรายสัปดาห์",
+    "emailDescription": "สรุปกิจกรรมในบัญชีของคุณทุกวันจันทร์",
+    "promotionsLabel": "ข่าวสารและโปรโมชัน",
+    "promotionsDescription": "ข้อเสนอพิเศษและสินค้าใหม่ที่อาจสนใจ"
+  },
+  "data": {
+    "title": "ข้อมูล",
+    "clearCache": "ล้างแคช",
+    "clearCacheDescription": "ลบข้อมูลที่แอปเก็บไว้ชั่วคราว ระบบจะโหลดใหม่เมื่อเปิดหน้านั้นอีกครั้ง"
+  },
+  "cacheCleared": "ล้างแคชเรียบร้อยแล้ว",
+  "about": {
+    "title": "เกี่ยวกับแอป",
+    "version": "เวอร์ชันแอป",
+    "buildNumber": "หมายเลขบิลด์",
+    "bundleId": "Bundle ID",
+    "environment": "สภาพแวดล้อม",
+    "apiUrl": "API URL",
+    "reactNativeVersion": "เวอร์ชัน React Native"
+  }
+}

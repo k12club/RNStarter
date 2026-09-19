@@ -1,0 +1,4 @@
+/* NativeWind: Tailwind directives (ถูกแปลงตอน build โดย Metro ผ่าน withNativeWind) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

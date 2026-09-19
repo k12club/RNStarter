@@ -1,0 +1,36 @@
+{
+  "searchPlaceholder": "ค้นหาชื่อสินค้า เช่น phone",
+  "searchLabel": "ค้นหาสินค้า",
+  "categoriesLabel": "หมวดหมู่สินค้า",
+  "allCategories": "ทั้งหมด",
+  "resultCount": "ทั้งหมด {{total}} รายการ",
+  "searchResultCount": "ผลการค้นหาจากทุกหมวดหมู่ {{total}} รายการ",
+  "emptyTitle": "ยังไม่มีสินค้า",
+  "emptyDescription": "ดึงหน้าจอลงเพื่อโหลดใหม่ หรือเลือกหมวดหมู่อื่น",
+  "noResultsTitle": "ไม่พบสินค้าที่ค้นหา",
+  "noResultsDescription": "ไม่มีสินค้าที่ตรงกับ \"{{query}}\" ลองใช้คำอื่นหรือตรวจสอบตัวสะกด",
+  "clearSearch": "ล้างคำค้นหา",
+  "endOfList": "แสดงสินค้าครบแล้ว",
+  "loadMoreFailed": "โหลดสินค้าเพิ่มไม่สำเร็จ",
+  "openDetailHint": "เปิดรายละเอียดสินค้า",
+  "ratingLabel": "คะแนน {{rating}} จาก 5",
+  "availability": {
+    "inStock": "มีสินค้า",
+    "lowStock": "ใกล้หมด",
+    "outOfStock": "สินค้าหมด"
+  },
+  "discount": "ลด {{percent}}%",
+  "stockCount": "คงเหลือ {{quantity}} ชิ้น",
+  "descriptionTitle": "รายละเอียด",
+  "detailsTitle": "ข้อมูลสินค้า",
+  "details": {
+    "category": "หมวดหมู่",
+    "sku": "รหัสสินค้า (SKU)",
+    "warranty": "การรับประกัน",
+    "shipping": "การจัดส่ง",
+    "returnPolicy": "การคืนสินค้า"
+  },
+  "addToCart": "เพิ่มลงตะกร้า",
+  "addedToCart": "เพิ่ม {{title}} ลงตะกร้าแล้ว",
+  "unavailable": "สินค้าหมด"
+}

@@ -1,0 +1,12 @@
+{
+  "required": "Please enter {{field}}",
+  "requiredSelect": "Please select {{field}}",
+  "email": "Invalid email address",
+  "phone": "Mobile number must be 10 digits starting with 06, 08 or 09",
+  "nationalId": "Invalid national ID number",
+  "minLength": "Must be at least {{count}} characters",
+  "maxLength": "Must be at most {{count}} characters",
+  "passwordMismatch": "Passwords do not match",
+  "otp": "Please enter all {{count}} digits of the OTP",
+  "acceptTerms": "Please accept the terms of use"
+}

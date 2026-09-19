@@ -73,3 +73,24 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Environment (ห้าม commit ค่าจริง ใช้ .env.example เป็นแม่แบบ)
+.env
+.env.*
+!.env.example
+
+# Android release signing
+android/keystore.properties
+# กุญแจเซ็นแอป / Apple cert (Android Studio สร้าง .jks เป็นค่าเริ่มต้น)
+*.jks
+*.p12
+*.p8
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+
+# Maestro (ผลและภาพหน้าจอจาก npm run e2e)
+.maestro-output/

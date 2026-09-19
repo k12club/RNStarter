@@ -1,0 +1,27 @@
+{
+  "usernameHandle": "@{{username}}",
+  "loadingProfile": "Loading profile",
+  "menu": {
+    "settings": "Settings",
+    "gallery": "Component gallery",
+    "privacy": "Privacy policy",
+    "help": "Help & support",
+    "about": "About app"
+  },
+  "logout": {
+    "action": "Log out",
+    "confirmTitle": "Log out of your account?",
+    "confirmMessage": "You will need to sign in again to keep using the app.",
+    "confirmLabel": "Yes, log out",
+    "pending": "Logging out...",
+    "failed": "Could not log out. Please try again."
+  },
+  "webview": {
+    "openInBrowser": "Open in browser",
+    "openFailed": "Could not open the link in a browser",
+    "insecureTitle": "Cannot open this link",
+    "insecureMessage": "For your security, the app only opens links that start with https://",
+    "loadFailedTitle": "Could not load the page",
+    "loading": "Loading page"
+  }
+}

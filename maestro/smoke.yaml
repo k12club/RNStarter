@@ -1,0 +1,80 @@
+# smoke test: เปิดแอป -> login ด้วยบัญชีทดลอง -> หน้าแรก -> สินค้า -> รายละเอียด -> โปรไฟล์ -> ตั้งค่า -> ออกจากระบบ
+# รันด้วย: npm run e2e (ต้อง build และเปิด Metro ไว้ก่อน: npm start + npm run ios / android)
+# ใช้ API จริงของ DummyJSON จึงต้องมีอินเทอร์เน็ต
+appId: com.rnstarter
+---
+- launchApp:
+    clearState: true
+    clearKeychain: true
+
+# หน้าเข้าสู่ระบบ
+- extendedWaitUntil:
+    visible: 'เข้าสู่ระบบ'
+    timeout: 30000
+- takeScreenshot: 01-login
+- tapOn:
+    id: 'login-fill-demo'
+- tapOn:
+    id: 'login-submit'
+
+# หน้าแรก
+- extendedWaitUntil:
+    visible:
+      id: 'home-greeting'
+    timeout: 20000
+- assertVisible: 'สวัสดี Emily'
+- takeScreenshot: 02-home
+
+# รายการสินค้า
+- tapOn:
+    id: 'home-action-products'
+- extendedWaitUntil:
+    visible:
+      id: 'product-item-1'
+    timeout: 20000
+- takeScreenshot: 03-products
+- tapOn:
+    id: 'product-item-1'
+- extendedWaitUntil:
+    visible:
+      id: 'product-add-to-cart'
+    timeout: 20000
+- takeScreenshot: 04-product-detail
+- tapOn:
+    id: 'product-add-to-cart'
+- takeScreenshot: 05-toast
+# toast แสดงทับ header ชั่วคราว (ปิดเองใน ~4 วินาที) รอให้หายก่อนกดย้อนกลับ
+- extendedWaitUntil:
+    notVisible: '.*ลงตะกร้าแล้ว'
+    timeout: 10000
+- runFlow: subflows/back.yaml
+
+# โปรไฟล์ -> ตั้งค่า (เปลี่ยนเป็นธีมมืด)
+- tapOn:
+    id: 'tab-profile'
+- extendedWaitUntil:
+    visible:
+      id: 'profile-logout'
+    timeout: 20000
+- takeScreenshot: 06-profile
+- tapOn:
+    id: 'profile-settings'
+# รอให้ animation เปิดหน้าจบก่อน (Android แตะระหว่างเลื่อนหน้าแล้วพลาดตำแหน่ง)
+- extendedWaitUntil:
+    visible:
+      id: 'settings-theme'
+    timeout: 10000
+- waitForAnimationToEnd
+- tapOn: 'มืด'
+- waitForAnimationToEnd
+- takeScreenshot: 07-settings-dark
+- tapOn: 'สว่าง'
+- runFlow: subflows/back.yaml
+
+# ออกจากระบบ
+- tapOn:
+    id: 'profile-logout'
+- tapOn: 'ยืนยันออกจากระบบ'
+- extendedWaitUntil:
+    visible: 'เข้าสู่ระบบ'
+    timeout: 15000

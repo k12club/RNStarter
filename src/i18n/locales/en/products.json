@@ -1,0 +1,36 @@
+{
+  "searchPlaceholder": "Search products, e.g. phone",
+  "searchLabel": "Search products",
+  "categoriesLabel": "Product categories",
+  "allCategories": "All",
+  "resultCount": "Results: {{total}}",
+  "searchResultCount": "Results from all categories: {{total}}",
+  "emptyTitle": "No products yet",
+  "emptyDescription": "Pull down to reload or choose another category",
+  "noResultsTitle": "No matching products",
+  "noResultsDescription": "Nothing matches \"{{query}}\". Try another word or check the spelling",
+  "clearSearch": "Clear search",
+  "endOfList": "You have seen all products",
+  "loadMoreFailed": "Could not load more products",
+  "openDetailHint": "Opens product details",
+  "ratingLabel": "Rated {{rating}} out of 5",
+  "availability": {
+    "inStock": "In stock",
+    "lowStock": "Low stock",
+    "outOfStock": "Out of stock"
+  },
+  "discount": "{{percent}}% off",
+  "stockCount": "{{quantity}} left in stock",
+  "descriptionTitle": "Description",
+  "detailsTitle": "Product details",
+  "details": {
+    "category": "Category",
+    "sku": "SKU",
+    "warranty": "Warranty",
+    "shipping": "Shipping",
+    "returnPolicy": "Returns"
+  },
+  "addToCart": "Add to cart",
+  "addedToCart": "Added {{title}} to cart",
+  "unavailable": "Out of stock"
+}

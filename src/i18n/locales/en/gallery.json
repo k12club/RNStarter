@@ -1,0 +1,457 @@
+{
+  "title": "Components",
+  "intro": "Every component in the app with all variants and states. Switch the theme and language below to check each one.",
+  "controls": {
+    "theme": "Theme",
+    "language": "Language",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark"
+  },
+  "sections": {
+    "typography": {
+      "title": "Typography",
+      "description": "Every Text variant with its size and line height. Check that Thai vowels and tone marks are not clipped."
+    },
+    "colors": {
+      "title": "Colors",
+      "description": "All color tokens of the current theme. Switch the theme above to see the values change."
+    },
+    "icons": {
+      "title": "Icons",
+      "description": "Every icon registered in icons.ts. Use this name with <Icon name>."
+    },
+    "buttons": {
+      "title": "Buttons",
+      "description": "Every Button variant and size, loading / disabled states, and IconButton."
+    },
+    "inputs": {
+      "title": "Inputs",
+      "description": "Every input and choice control with helper text, errors and disabled states."
+    },
+    "form": {
+      "title": "Form",
+      "description": "A real form using react-hook-form + zod with the app's shared schemas."
+    },
+    "display": {
+      "title": "Display",
+      "description": "Cards, badges, chips, avatars, lists, progress and images."
+    },
+    "feedback": {
+      "title": "Feedback",
+      "description": "Toasts, dialogs, loading overlay, empty and error states, and the offline banner."
+    },
+    "sheets": {
+      "title": "Bottom sheets",
+      "description": "Sheets that slide up from the bottom: content-sized and scrollable."
+    },
+    "nativewind": {
+      "title": "NativeWind",
+      "description": "Styling with className compared with the equivalent StyleSheet."
+    },
+    "responsive": {
+      "title": "Responsive",
+      "description": "Values from the responsive helpers on this device (in dp)."
+    }
+  },
+  "typography": {
+    "variantsTitle": "Text variants",
+    "spec": "size {{size}} · line height {{lineHeight}} · {{font}}",
+    "sampleThai": "ภาษาไทย ฤๅษี ปัจฉิมลิขิต ญี่ปุ่น",
+    "sampleLatin": "The quick brown fox 0123456789",
+    "weightsTitle": "Font weights",
+    "weightsDescription": "Pick weights with <Text weight> only (fontWeight makes Android fall back to the system font).",
+    "weightSample": "{{weight}} · Readable text Aa"
+  },
+  "colors": {
+    "current": "Current theme: {{scheme}}",
+    "groups": {
+      "surfaces": "Backgrounds and surfaces",
+      "text": "Text",
+      "borders": "Borders",
+      "primary": "Primary",
+      "success": "Success",
+      "warning": "Warning",
+      "danger": "Danger",
+      "info": "Info",
+      "other": "Other"
+    }
+  },
+  "icons": {
+    "title": "Icon",
+    "searchPlaceholder": "Search icon names",
+    "count": "Showing {{shown}} of {{total}} icons",
+    "empty": "No icons match your search"
+  },
+  "buttons": {
+    "variantsTitle": "Button: variant x size",
+    "variantsDescription": "Pressing shows a toast naming the button (sm is 36 tall but its touch area is still 44).",
+    "sample": "Pay now",
+    "pressed": "Pressed {{name}}",
+    "statesTitle": "States and icons",
+    "saving": "Saving",
+    "addToCart": "Add to cart",
+    "continue": "Continue",
+    "share": "Share",
+    "remove": "Remove item",
+    "checkout": "Confirm the whole order",
+    "saveDraft": "Save draft",
+    "iconButtonsTitle": "IconButton",
+    "iconButtonsDescription": "Icon-only buttons always need an accessibilityLabel.",
+    "iconButtonLabel": "Like ({{variant}} {{size}})",
+    "iconButtonRounded": "Settings ({{variant}} rounded)",
+    "refreshing": "Refreshing"
+  },
+  "inputs": {
+    "nickname": "Nickname",
+    "nicknamePlaceholder": "e.g. Tonkhao",
+    "nicknameHelper": "The name shops will see",
+    "workEmail": "Work email",
+    "workEmailError": "Must be an email on your company domain",
+    "memberId": "Member ID",
+    "memberIdHelper": "Cannot be changed",
+    "currentPassword": "Current password",
+    "shop": "Search shops",
+    "shopPlaceholder": "Shop or branch name",
+    "phone": "Phone number",
+    "phoneHelp": "Why we need your phone number",
+    "phoneHelpMessage": "We only call if there is a problem with your parcel.",
+    "note": "Note to the shop",
+    "notePlaceholder": "e.g. No vegetables, extra cutlery please",
+    "noteCount": "{{current}}/{{max}} characters",
+    "searchPlaceholder": "Search products, shops or categories",
+    "searchDebounced": "Debounced value: {{value}}",
+    "contact": "Contact channel",
+    "contactHelper": "Options with descriptions",
+    "contacts": {
+      "line": {
+        "label": "LINE",
+        "description": "Fastest reply"
+      },
+      "phone": {
+        "label": "Phone",
+        "description": "9:00 - 18:00"
+      },
+      "email": {
+        "label": "Email",
+        "description": "Reply within 1 business day"
+      }
+    },
+    "province": "Province",
+    "provinceSearch": "Type a province name",
+    "branch": "Pickup branch",
+    "branchError": "Please choose a branch to continue",
+    "branchDisabled": "Main branch (disabled)",
+    "otp": "Verification code",
+    "otpHelper": "A 6-digit code was sent to 081-xxx-5678",
+    "otpComplete": "Code complete: {{code}}",
+    "pin": "PIN",
+    "pinError": "Wrong PIN, 2 attempts left",
+    "pinDisabled": "PIN (disabled)",
+    "topicsAll": "All notifications",
+    "topics": {
+      "orders": "Order status",
+      "promotions": "Promotions and discounts",
+      "news": "News from shops"
+    },
+    "terms": "Accept the delivery proxy terms",
+    "termsDescription": "Let someone else receive parcels when you are away",
+    "termsError": "Accept these terms before choosing a proxy",
+    "checkedDisabled": "Checked (disabled)",
+    "uncheckedDisabled": "Unchecked (disabled)",
+    "shippingLabel": "Shipping method",
+    "shipping": {
+      "standard": {
+        "label": "Standard",
+        "description": "Arrives in 3-5 days, free"
+      },
+      "express": {
+        "label": "Express",
+        "description": "Arrives in 1 day, 60 THB"
+      },
+      "pickup": {
+        "label": "Pick up in store",
+        "description": "Not available in this area yet"
+      }
+    },
+    "push": "Push notifications",
+    "pushDescription": "Notify me when an order changes",
+    "syncDisabled": "Auto sync (disabled)",
+    "switchBare": "Switch without a label (44 touch area plus accessibilityLabel)",
+    "dataSaver": "Data saver",
+    "periodLabel": "Period",
+    "periods": {
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year"
+    },
+    "viewModeLabel": "View mode",
+    "viewModes": {
+      "list": "List",
+      "grid": "Grid"
+    }
+  },
+  "provinces": {
+    "bkk": "Bangkok",
+    "nbi": "Nonthaburi",
+    "ptm": "Pathum Thani",
+    "ayy": "Phra Nakhon Si Ayutthaya",
+    "cbi": "Chon Buri",
+    "nma": "Nakhon Ratchasima",
+    "kkn": "Khon Kaen",
+    "cnx": "Chiang Mai",
+    "cri": "Chiang Rai",
+    "hkt": "Phuket",
+    "sni": "Surat Thani",
+    "ska": "Songkhla"
+  },
+  "form": {
+    "title": "Sign up (sample)",
+    "description": "Submit while empty to see the translated error of every field.",
+    "name": "Full name",
+    "namePlaceholder": "e.g. Somchai Jaidee",
+    "email": "Email",
+    "mobile": "Mobile number",
+    "nationalId": "National ID",
+    "nationalIdHelper": "13 digits, dashes optional",
+    "province": "Home province",
+    "password": "Password",
+    "passwordHelper": "At least {{min}} characters",
+    "confirmPassword": "Password again",
+    "otp": "OTP code",
+    "otpHelper": "Any 6 digits work in this sample",
+    "acceptTerms": "I accept the terms of use and privacy policy",
+    "submit": "Submit form",
+    "reset": "Reset form",
+    "successTitle": "Form submitted",
+    "successMessage": "{{name}} · {{email}} · {{mobile}} · {{province}}"
+  },
+  "display": {
+    "cards": {
+      "title": "Card",
+      "description": "Elevation, borders, pressable cards and header / footer",
+      "pressableTitle": "Pressable card",
+      "pressableHint": "Tap to see the order details",
+      "pressed": "Card pressed",
+      "disabledTitle": "Disabled card",
+      "disabledHint": "Temporarily out of stock",
+      "orderTitle": "Order #1024",
+      "orderStatus": "Shipping",
+      "orderBody": "2 bags of medium roast coffee and 1 ceramic mug. Expected tomorrow.",
+      "orderTrack": "Track parcel",
+      "orderReceived": "Order received"
+    },
+    "badges": {
+      "title": "Badge and CountBadge",
+      "status": {
+        "neutral": "General",
+        "primary": "New",
+        "success": "Done",
+        "warning": "Unpaid",
+        "danger": "Cancelled",
+        "info": "Shipping"
+      },
+      "online": "Online",
+      "pending": "Under review",
+      "verified": "Verified",
+      "sale": "On sale",
+      "unread": "Has unread items",
+      "notifications": "{{total}} notifications"
+    },
+    "chips": {
+      "title": "Chip",
+      "filters": {
+        "all": "All",
+        "new": "New",
+        "sale": "On sale",
+        "freeShipping": "Free shipping"
+      },
+      "tags": {
+        "coffee": "Coffee",
+        "bakery": "Bakery",
+        "vegan": "Vegan"
+      },
+      "reset": "Restore tags",
+      "nearby": "Near me",
+      "soldOut": "Sold out",
+      "selectedDisabled": "Selected (disabled)",
+      "readOnly": "Display only"
+    },
+    "avatars": {
+      "title": "Avatar",
+      "withImage": "With image: xs / sm / md / lg / xl",
+      "initials": "No image, initials: {{name}} -> {{initials}}",
+      "statusAndFallback": "Status dot, broken image, no name",
+      "online": "Online",
+      "busy": "Busy",
+      "away": "Away",
+      "offline": "Offline"
+    },
+    "divider": {
+      "title": "Divider",
+      "or": "or",
+      "left": "Left",
+      "right": "Right"
+    },
+    "list": {
+      "title": "ListItem",
+      "plain": "Text-only item",
+      "address": "Shipping address",
+      "addressDetail": "99/1 Sukhumvit Road, Khlong Tan Nuea, Watthana, Bangkok 10110",
+      "member": "Member since 2024",
+      "gold": "Gold",
+      "language": "Language",
+      "notifications": "Notifications",
+      "locked": "Payment history",
+      "lockedDetail": "Verify your identity first",
+      "longTitle": "Latest revision of the terms and conditions of service for members of every tier",
+      "longSubtitle": "Long text wraps onto new lines instead of being cut, so it stays readable on small screens.",
+      "deleteAccount": "Delete account"
+    },
+    "section": {
+      "title": "Section",
+      "sample": "Recommended",
+      "sampleDescription": "Picked from items you have viewed",
+      "body": "Section content follows the heading. The \"See all\" link sits to the right of the heading."
+    },
+    "accordion": {
+      "title": "Accordion",
+      "q1": "Can I change the shipping address?",
+      "a1": "Yes, before the shop confirms the order, from the order details page.",
+      "q2": "Which payment methods are supported?",
+      "q2Subtitle": "Cards, PromptPay, cash on delivery",
+      "a2": "Credit/debit cards, PromptPay, and cash on delivery in some areas.",
+      "disabled": "A section that cannot open"
+    },
+    "progress": {
+      "title": "ProgressBar and Spinner",
+      "upload": "Uploaded {{percent}}",
+      "uploadLabel": "Upload progress",
+      "decrease": "Minus 25%",
+      "increase": "Plus 25%",
+      "syncing": "Syncing data"
+    },
+    "skeleton": {
+      "title": "Skeleton"
+    },
+    "media": {
+      "title": "AppImage",
+      "sample": "16:9 sample image",
+      "broken": "Broken URL",
+      "empty": "No image"
+    },
+    "layout": {
+      "headerTitle": "AppHeader",
+      "headerDescription": "For screens with the native header hidden (this preview skips the safe area)",
+      "headerSample": "Order details",
+      "headerBody": "Back button on the left, long titles are truncated with ..., extra actions on the right.",
+      "backPressed": "Back pressed",
+      "share": "Share order",
+      "spacerTitle": "Spacer"
+    }
+  },
+  "feedback": {
+    "toastTitle": "Toast",
+    "toastDescription": "Shown at the top, up to 3 stacked. A duplicate message does not add a new toast.",
+    "toastButtons": {
+      "success": "Success",
+      "error": "Error",
+      "info": "Info",
+      "warning": "Warning"
+    },
+    "toastMessages": {
+      "success": "Your changes were saved",
+      "error": "Could not send the data, please try again",
+      "info": "A new version is available",
+      "warning": "Battery is low, the upload may not finish"
+    },
+    "toastWithTitle": "With title",
+    "toastWithTitleHeading": "Payment successful",
+    "toastWithTitleMessage": "Paid ฿1,250.00. The shop will start preparing your order now.",
+    "toastSticky": "Sticky",
+    "toastStickyMessage": "This toast stays until you close it",
+    "toastHideAll": "Hide all",
+    "toastPreview": "What each Toast type looks like (static)",
+    "previewTitle": "Toast title",
+    "previewMessage": "Sample {{type}} message",
+    "dialogTitle": "Dialog",
+    "dialogDescription": "useDialog().alert / confirm return a Promise. The result is shown with a toast.",
+    "openAlert": "Alert",
+    "openConfirm": "Confirm",
+    "openDelete": "Delete",
+    "openCustom": "Custom",
+    "alertTitle": "Profile updated",
+    "alertMessage": "Your profile information has been saved.",
+    "alertClosed": "Alert closed",
+    "confirmTitle": "Leave this page?",
+    "confirmMessage": "Unsaved changes will be lost.",
+    "deleteTitle": "Delete this address?",
+    "deleteMessage": "This cannot be undone.",
+    "resultConfirmed": "Result: confirmed",
+    "resultCancelled": "Result: cancelled",
+    "customTitle": "Cancel order",
+    "customMessage": "Tell us why so we can improve.",
+    "reasonLabel": "Reason",
+    "reasons": {
+      "price": "Cheaper elsewhere",
+      "quality": "Not what I wanted",
+      "other": "Something else"
+    },
+    "customSubmit": "Send reason",
+    "customLater": "Later",
+    "customResult": "Reason sent: {{reason}}",
+    "overlayDescription": "Covers the whole screen and blocks touches for 1.5 seconds (passed via Screen overlay).",
+    "showOverlay": "Show LoadingOverlay",
+    "overlayMessage": "Saving...",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Pick something you like and come back here to check out.",
+    "emptyAction": "Start shopping",
+    "errorDescription": "Uses a fake network ApiError. Pressing retry spins the button for 1 second.",
+    "retryFailed": "Still offline (sample)",
+    "offlineDescription": "This banner appears by itself when there is no internet. Turn on airplane mode to see it.",
+    "networkStatus": "Current status: {{status}} ({{type}})",
+    "statusOnline": "Online",
+    "statusOffline": "Offline"
+  },
+  "sheets": {
+    "formTitle": "Content-sized",
+    "formDescription": "Without snapPoints the sheet is as tall as its content. It contains text inputs.",
+    "openForm": "Open the address sheet",
+    "formSheetTitle": "Name this address",
+    "addressLabel": "Address name",
+    "addressPlaceholder": "e.g. Home, Office",
+    "searchPlaceholder": "Search delivery areas",
+    "keyboardNote": "TextField does not move the sheet above the keyboard yet (it uses a plain TextInput). SearchBar uses BottomSheetTextInput, so it does.",
+    "saved": "Saved address name: {{label}}",
+    "listTitle": "Scrollable",
+    "listDescription": "snapPoints 50% / 90% with scrollable (BottomSheetScrollView)",
+    "openList": "Open the long list sheet",
+    "listSheetTitle": "Choose a parcel",
+    "listItem": "Parcel {{index}}",
+    "listItemDetail": "Tap to choose and close the sheet",
+    "selectTitle": "Select on the page",
+    "selectDescription": "Opens its own option sheet when pressed",
+    "deliveryProvince": "Destination province"
+  },
+  "nativewind": {
+    "compareTitle": "className vs StyleSheet",
+    "compareDescription": "className colors are token names only (no bg-blue-500). Mix freely with style; style wins on conflicts.",
+    "sampleText": "Sample text box",
+    "spacingTitle": "Spacing (gap / padding)",
+    "spacingDescription": "Uses Tailwind's rem-based scale. The bar below shows what 1rem is on this device.",
+    "remMeasuring": "Measuring...",
+    "remMeasured": "w-16 (4rem) measures {{width}} dp, so 1rem = {{rem}} dp (app spacing token: lg = 16)",
+    "themeTitle": "Automatic theme switching",
+    "themeDescription": "className reads colors from the current theme's CSS variables. Switch the theme above and colors change without writing dark: variants.",
+    "textTitle": "Typography uses props, not className",
+    "textDescription": "The app's Text always sets font, size and color through style, so typography classes on Text have no effect. Use variant / color / weight.",
+    "overriddenSample": "className has no effect",
+    "propsSample": "Use props instead"
+  },
+  "responsive": {
+    "hookDescription": "Computed from the current window size and updated on rotation.",
+    "barLabel": "Bar width wp(50) = half the screen width",
+    "staticDescription": "wp / hp remember the screen size at launch and do not change on rotation. Use useResponsive() on screens that rotate."
+  }
+}

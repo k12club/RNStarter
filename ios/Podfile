@@ -30,5 +30,17 @@ target 'RNStarter' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # Xcode 27 ไม่ยอม build target ที่ deployment target ต่ำกว่าที่รองรับ
+    # react_native_post_install ปรับให้เฉพาะ library target แต่ไม่ปรับ resource bundle
+    # (เช่น RNSVG-RNSVGFilters = 12.4, RNDeviceInfo-RNDeviceInfoPrivacyInfo = 9.0)
+    # https://github.com/facebook/react-native/issues/58555
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |build_config|
+        if build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < min_ios_version_supported.to_f
+          build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = min_ios_version_supported
+        end
+      end
+    end
   end
 end

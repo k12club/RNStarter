@@ -1,0 +1,20 @@
+# ไฟล์ที่ generate / ของ native / lock: ไม่ต้อง format
+node_modules/
+.remember/
+.maestro-output/
+**/.cxx/
+**/build/
+ios/Pods/
+ios/build/
+android/build/
+android/app/build/
+android/.gradle/
+vendor/
+coverage/
+package-lock.json
+nativewind-env.d.ts
+android/link-assets-manifest.json
+ios/link-assets-manifest.json
+src/assets/
+patches/
+ios/**/*.xcassets/

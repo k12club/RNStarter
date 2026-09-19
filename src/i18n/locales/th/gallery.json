@@ -1,0 +1,457 @@
+{
+  "title": "คอมโพเนนต์",
+  "intro": "รวมคอมโพเนนต์ทั้งหมดของแอปพร้อมทุกรูปแบบและสถานะ สลับธีมและภาษาด้านล่างเพื่อตรวจหน้าตาได้ครบทุกแบบ",
+  "controls": {
+    "theme": "ธีม",
+    "language": "ภาษา",
+    "themeSystem": "ตามระบบ",
+    "themeLight": "สว่าง",
+    "themeDark": "มืด"
+  },
+  "sections": {
+    "typography": {
+      "title": "ตัวอักษร",
+      "description": "ทุก variant ของ Text พร้อมขนาดและความสูงบรรทัด ตรวจว่าสระบน สระล่าง และวรรณยุกต์ไม่ถูกตัด"
+    },
+    "colors": {
+      "title": "สี",
+      "description": "color token ทั้งหมดของธีมปัจจุบัน สลับธีมด้านบนแล้วค่าสีเปลี่ยนตาม"
+    },
+    "icons": {
+      "title": "ไอคอน",
+      "description": "ไอคอนทุกตัวที่ลงทะเบียนใน icons.ts ใช้ชื่อนี้กับ <Icon name>"
+    },
+    "buttons": {
+      "title": "ปุ่ม",
+      "description": "Button ทุก variant และขนาด สถานะกำลังโหลด / กดไม่ได้ และ IconButton"
+    },
+    "inputs": {
+      "title": "ช่องกรอกข้อมูล",
+      "description": "ช่องกรอกและตัวเลือกทุกชนิด พร้อมข้อความช่วย ข้อความผิดพลาด และสถานะปิดใช้งาน"
+    },
+    "form": {
+      "title": "ฟอร์ม",
+      "description": "ฟอร์มจริงที่ใช้ react-hook-form + zod และ schema กลางของแอป"
+    },
+    "display": {
+      "title": "การแสดงผล",
+      "description": "การ์ด ป้าย ชิป รูปโปรไฟล์ รายการ ความคืบหน้า และรูปภาพ"
+    },
+    "feedback": {
+      "title": "การแจ้งผล",
+      "description": "toast, dialog, หน้าจอรอโหลด, หน้าว่าง, หน้าผิดพลาด และแถบออฟไลน์"
+    },
+    "sheets": {
+      "title": "Bottom sheet",
+      "description": "แผ่นเลื่อนขึ้นจากด้านล่างแบบสูงตามเนื้อหาและแบบเลื่อนดูได้"
+    },
+    "nativewind": {
+      "title": "NativeWind",
+      "description": "เขียน style ด้วย className เทียบกับ StyleSheet ที่ให้ผลเดียวกัน"
+    },
+    "responsive": {
+      "title": "ขนาดหน้าจอ",
+      "description": "ค่าจาก responsive helpers บนเครื่องนี้ (หน่วย dp)"
+    }
+  },
+  "typography": {
+    "variantsTitle": "Text variants",
+    "spec": "ขนาด {{size}} · สูงบรรทัด {{lineHeight}} · {{font}}",
+    "sampleThai": "ภาษาไทย ฤๅษี ปัจฉิมลิขิต ญี่ปุ่น",
+    "sampleLatin": "The quick brown fox 0123456789",
+    "weightsTitle": "น้ำหนักตัวอักษร",
+    "weightsDescription": "เลือกด้วย <Text weight> เท่านั้น (ห้ามใช้ fontWeight เพราะ Android จะกลับไปใช้ฟอนต์ระบบ)",
+    "weightSample": "{{weight}} · ภาษาไทยอ่านง่าย Aa"
+  },
+  "colors": {
+    "current": "ธีมปัจจุบัน: {{scheme}}",
+    "groups": {
+      "surfaces": "พื้นหลังและพื้นผิว",
+      "text": "ข้อความ",
+      "borders": "เส้นขอบ",
+      "primary": "สีหลัก (primary)",
+      "success": "สำเร็จ (success)",
+      "warning": "คำเตือน (warning)",
+      "danger": "อันตราย (danger)",
+      "info": "ข้อมูล (info)",
+      "other": "อื่น ๆ"
+    }
+  },
+  "icons": {
+    "title": "Icon",
+    "searchPlaceholder": "ค้นหาชื่อไอคอน",
+    "count": "แสดง {{shown}} จาก {{total}} ไอคอน",
+    "empty": "ไม่พบไอคอนที่ค้นหา"
+  },
+  "buttons": {
+    "variantsTitle": "Button: variant x size",
+    "variantsDescription": "กดแล้วมี toast บอกว่ากดปุ่มไหน (sm สูง 36 แต่พื้นที่แตะยังครบ 44)",
+    "sample": "ชำระเงิน",
+    "pressed": "กดปุ่ม {{name}}",
+    "statesTitle": "สถานะและไอคอน",
+    "saving": "กำลังบันทึก",
+    "addToCart": "ใส่ตะกร้า",
+    "continue": "ไปต่อ",
+    "share": "แชร์",
+    "remove": "ลบรายการ",
+    "checkout": "ยืนยันการสั่งซื้อทั้งหมด",
+    "saveDraft": "บันทึกแบบร่าง",
+    "iconButtonsTitle": "IconButton",
+    "iconButtonsDescription": "ปุ่มไอคอนอย่างเดียวต้องมี accessibilityLabel เสมอ",
+    "iconButtonLabel": "ถูกใจ ({{variant}} {{size}})",
+    "iconButtonRounded": "ตั้งค่า ({{variant}} มุมโค้ง)",
+    "refreshing": "กำลังรีเฟรช"
+  },
+  "inputs": {
+    "nickname": "ชื่อเล่น",
+    "nicknamePlaceholder": "เช่น ต้นข้าว",
+    "nicknameHelper": "ชื่อที่แสดงให้ร้านค้าเห็น",
+    "workEmail": "อีเมลที่ทำงาน",
+    "workEmailError": "ต้องเป็นอีเมลที่ลงท้ายด้วยโดเมนของบริษัท",
+    "memberId": "รหัสสมาชิก",
+    "memberIdHelper": "แก้ไขไม่ได้",
+    "currentPassword": "รหัสผ่านปัจจุบัน",
+    "shop": "ค้นหาร้านค้า",
+    "shopPlaceholder": "ชื่อร้านหรือสาขา",
+    "phone": "เบอร์โทรศัพท์",
+    "phoneHelp": "ทำไมต้องใช้เบอร์โทร",
+    "phoneHelpMessage": "ใช้ติดต่อเมื่อพัสดุมีปัญหาเท่านั้น",
+    "note": "หมายเหตุถึงร้าน",
+    "notePlaceholder": "เช่น ไม่ใส่ผัก ขอช้อนส้อมเพิ่ม",
+    "noteCount": "{{current}}/{{max}} ตัวอักษร",
+    "searchPlaceholder": "ค้นหาสินค้า ร้านค้า หรือหมวดหมู่",
+    "searchDebounced": "ค่าหลัง debounce: {{value}}",
+    "contact": "ช่องทางติดต่อ",
+    "contactHelper": "ตัวเลือกมีคำอธิบายประกอบ",
+    "contacts": {
+      "line": {
+        "label": "LINE",
+        "description": "ตอบกลับเร็วที่สุด"
+      },
+      "phone": {
+        "label": "โทรศัพท์",
+        "description": "เวลา 9:00 - 18:00 น."
+      },
+      "email": {
+        "label": "อีเมล",
+        "description": "ตอบกลับภายใน 1 วันทำการ"
+      }
+    },
+    "province": "จังหวัด",
+    "provinceSearch": "พิมพ์ชื่อจังหวัด",
+    "branch": "สาขาที่รับสินค้า",
+    "branchError": "กรุณาเลือกสาขาก่อนดำเนินการต่อ",
+    "branchDisabled": "สาขาหลัก (ปิดใช้งาน)",
+    "otp": "รหัสยืนยัน",
+    "otpHelper": "ส่งรหัส 6 หลักไปที่ 081-xxx-5678 แล้ว",
+    "otpComplete": "กรอกรหัสครบแล้ว: {{code}}",
+    "pin": "รหัส PIN",
+    "pinError": "รหัส PIN ไม่ถูกต้อง เหลือโอกาสอีก 2 ครั้ง",
+    "pinDisabled": "รหัส PIN (ปิดใช้งาน)",
+    "topicsAll": "รับการแจ้งเตือนทั้งหมด",
+    "topics": {
+      "orders": "สถานะคำสั่งซื้อ",
+      "promotions": "โปรโมชันและส่วนลด",
+      "news": "ข่าวสารจากร้านค้า"
+    },
+    "terms": "ยอมรับเงื่อนไขการรับของแทน",
+    "termsDescription": "ให้ผู้อื่นรับพัสดุแทนได้เมื่อไม่อยู่บ้าน",
+    "termsError": "ต้องยอมรับเงื่อนไขนี้ก่อนเลือกผู้รับแทน",
+    "checkedDisabled": "เลือกแล้ว (ปิดใช้งาน)",
+    "uncheckedDisabled": "ยังไม่เลือก (ปิดใช้งาน)",
+    "shippingLabel": "วิธีจัดส่ง",
+    "shipping": {
+      "standard": {
+        "label": "จัดส่งปกติ",
+        "description": "ถึงภายใน 3-5 วัน ฟรีค่าส่ง"
+      },
+      "express": {
+        "label": "จัดส่งด่วน",
+        "description": "ถึงภายใน 1 วัน ค่าส่ง 60 บาท"
+      },
+      "pickup": {
+        "label": "รับที่ร้าน",
+        "description": "ยังไม่เปิดให้บริการในพื้นที่นี้"
+      }
+    },
+    "push": "แจ้งเตือนผ่านแอป",
+    "pushDescription": "แจ้งเมื่อคำสั่งซื้อมีการเปลี่ยนแปลง",
+    "syncDisabled": "ซิงก์อัตโนมัติ (ปิดใช้งาน)",
+    "switchBare": "Switch ที่ไม่มี label (มีพื้นที่แตะ 44 และ accessibilityLabel)",
+    "dataSaver": "โหมดประหยัดข้อมูล",
+    "periodLabel": "ช่วงเวลา",
+    "periods": {
+      "day": "วัน",
+      "week": "สัปดาห์",
+      "month": "เดือน",
+      "year": "ปี"
+    },
+    "viewModeLabel": "รูปแบบการแสดงผล",
+    "viewModes": {
+      "list": "รายการ",
+      "grid": "ตาราง"
+    }
+  },
+  "provinces": {
+    "bkk": "กรุงเทพมหานคร",
+    "nbi": "นนทบุรี",
+    "ptm": "ปทุมธานี",
+    "ayy": "พระนครศรีอยุธยา",
+    "cbi": "ชลบุรี",
+    "nma": "นครราชสีมา",
+    "kkn": "ขอนแก่น",
+    "cnx": "เชียงใหม่",
+    "cri": "เชียงราย",
+    "hkt": "ภูเก็ต",
+    "sni": "สุราษฎร์ธานี",
+    "ska": "สงขลา"
+  },
+  "form": {
+    "title": "สมัครสมาชิก (ตัวอย่าง)",
+    "description": "กดส่งตอนยังว่างเพื่อดูข้อความผิดพลาดที่แปลแล้วของทุกช่อง",
+    "name": "ชื่อ-นามสกุล",
+    "namePlaceholder": "เช่น สมชาย ใจดี",
+    "email": "อีเมล",
+    "mobile": "เบอร์มือถือ",
+    "nationalId": "เลขบัตรประชาชน",
+    "nationalIdHelper": "13 หลัก ใส่ขีดหรือไม่ใส่ก็ได้",
+    "province": "จังหวัดที่อยู่",
+    "password": "รหัสผ่าน",
+    "passwordHelper": "อย่างน้อย {{min}} ตัวอักษร",
+    "confirmPassword": "รหัสผ่านอีกครั้ง",
+    "otp": "รหัส OTP",
+    "otpHelper": "ตัวอย่างนี้ใช้รหัส 6 หลักใดก็ได้",
+    "acceptTerms": "ยอมรับข้อกำหนดการใช้งานและนโยบายความเป็นส่วนตัว",
+    "submit": "ส่งฟอร์ม",
+    "reset": "ล้างฟอร์ม",
+    "successTitle": "ส่งฟอร์มเรียบร้อย",
+    "successMessage": "{{name}} · {{email}} · {{mobile}} · {{province}}"
+  },
+  "display": {
+    "cards": {
+      "title": "Card",
+      "description": "ระดับเงา, เส้นขอบ, การ์ดที่กดได้ และ header / footer",
+      "pressableTitle": "การ์ดที่กดได้ทั้งใบ",
+      "pressableHint": "แตะเพื่อดูรายละเอียดคำสั่งซื้อ",
+      "pressed": "กดการ์ดแล้ว",
+      "disabledTitle": "การ์ดที่กดไม่ได้",
+      "disabledHint": "สินค้าหมดชั่วคราว",
+      "orderTitle": "คำสั่งซื้อ #1024",
+      "orderStatus": "กำลังจัดส่ง",
+      "orderBody": "กาแฟคั่วกลาง 2 ถุง และแก้วเซรามิก 1 ใบ คาดว่าจะได้รับภายในวันพรุ่งนี้",
+      "orderTrack": "ติดตามพัสดุ",
+      "orderReceived": "ได้รับสินค้าแล้ว"
+    },
+    "badges": {
+      "title": "Badge และ CountBadge",
+      "status": {
+        "neutral": "ทั่วไป",
+        "primary": "ใหม่",
+        "success": "สำเร็จ",
+        "warning": "รอชำระ",
+        "danger": "ยกเลิก",
+        "info": "กำลังส่ง"
+      },
+      "online": "ออนไลน์",
+      "pending": "รอตรวจสอบ",
+      "verified": "ยืนยันตัวตนแล้ว",
+      "sale": "ลดราคา",
+      "unread": "มีรายการที่ยังไม่อ่าน",
+      "notifications": "การแจ้งเตือน {{total}} รายการ"
+    },
+    "chips": {
+      "title": "Chip",
+      "filters": {
+        "all": "ทั้งหมด",
+        "new": "มาใหม่",
+        "sale": "ลดราคา",
+        "freeShipping": "ส่งฟรี"
+      },
+      "tags": {
+        "coffee": "กาแฟ",
+        "bakery": "เบเกอรี่",
+        "vegan": "มังสวิรัติ"
+      },
+      "reset": "คืนค่าแท็ก",
+      "nearby": "ใกล้ฉัน",
+      "soldOut": "สินค้าหมด",
+      "selectedDisabled": "เลือกแล้ว (ปิดใช้งาน)",
+      "readOnly": "แสดงผลอย่างเดียว"
+    },
+    "avatars": {
+      "title": "Avatar",
+      "withImage": "มีรูป: xs / sm / md / lg / xl",
+      "initials": "ไม่มีรูป ใช้ตัวอักษรย่อ: {{name}} -> {{initials}}",
+      "statusAndFallback": "จุดสถานะ, รูปโหลดไม่ได้, ไม่มีชื่อ",
+      "online": "ออนไลน์",
+      "busy": "ไม่ว่าง",
+      "away": "ไม่อยู่",
+      "offline": "ออฟไลน์"
+    },
+    "divider": {
+      "title": "Divider",
+      "or": "หรือ",
+      "left": "ซ้าย",
+      "right": "ขวา"
+    },
+    "list": {
+      "title": "ListItem",
+      "plain": "รายการแบบข้อความอย่างเดียว",
+      "address": "ที่อยู่จัดส่ง",
+      "addressDetail": "99/1 ถนนสุขุมวิท แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110",
+      "member": "สมาชิกตั้งแต่ปี 2567",
+      "gold": "ระดับทอง",
+      "language": "ภาษา",
+      "notifications": "การแจ้งเตือน",
+      "locked": "ประวัติการชำระเงิน",
+      "lockedDetail": "ต้องยืนยันตัวตนก่อน",
+      "longTitle": "ข้อกำหนดและเงื่อนไขการใช้บริการฉบับปรับปรุงล่าสุดสำหรับสมาชิกทุกระดับ",
+      "longSubtitle": "ข้อความยาวจะขึ้นบรรทัดใหม่ ไม่ถูกตัดทิ้ง เพื่อให้อ่านได้ครบบนจอเล็ก",
+      "deleteAccount": "ลบบัญชีผู้ใช้"
+    },
+    "section": {
+      "title": "Section",
+      "sample": "สินค้าแนะนำ",
+      "sampleDescription": "คัดมาจากรายการที่คุณเคยดู",
+      "body": "เนื้อหาของ section วางต่อจากหัวข้อ ปุ่ม \"ดูทั้งหมด\" อยู่ขวาของหัวข้อ"
+    },
+    "accordion": {
+      "title": "Accordion",
+      "q1": "เปลี่ยนที่อยู่จัดส่งได้ไหม",
+      "a1": "เปลี่ยนได้ก่อนร้านค้ายืนยันคำสั่งซื้อ ที่หน้ารายละเอียดคำสั่งซื้อ",
+      "q2": "ชำระเงินได้ช่องทางไหนบ้าง",
+      "q2Subtitle": "บัตร, พร้อมเพย์, เก็บเงินปลายทาง",
+      "a2": "รองรับบัตรเครดิต/เดบิต พร้อมเพย์ และเก็บเงินปลายทางในบางพื้นที่",
+      "disabled": "หัวข้อที่เปิดไม่ได้"
+    },
+    "progress": {
+      "title": "ProgressBar และ Spinner",
+      "upload": "อัปโหลดแล้ว {{percent}}",
+      "uploadLabel": "ความคืบหน้าการอัปโหลด",
+      "decrease": "ลด 25%",
+      "increase": "เพิ่ม 25%",
+      "syncing": "กำลังซิงก์ข้อมูล"
+    },
+    "skeleton": {
+      "title": "Skeleton"
+    },
+    "media": {
+      "title": "AppImage",
+      "sample": "ภาพตัวอย่างขนาด 16:9",
+      "broken": "URL เสีย",
+      "empty": "ไม่มีรูป"
+    },
+    "layout": {
+      "headerTitle": "AppHeader",
+      "headerDescription": "ใช้กับหน้าที่ปิด native header (ตัวอย่างนี้ไม่เว้น safe area)",
+      "headerSample": "รายละเอียดคำสั่งซื้อ",
+      "headerBody": "ปุ่มย้อนกลับด้านซ้าย หัวข้อยาวถูกตัดด้วย ... และปุ่มเสริมด้านขวา",
+      "backPressed": "กดปุ่มย้อนกลับ",
+      "share": "แชร์คำสั่งซื้อ",
+      "spacerTitle": "Spacer"
+    }
+  },
+  "feedback": {
+    "toastTitle": "Toast",
+    "toastDescription": "แสดงด้านบนของจอ ซ้อนได้สูงสุด 3 อัน ข้อความซ้ำจะไม่เพิ่มอันใหม่",
+    "toastButtons": {
+      "success": "สำเร็จ",
+      "error": "ผิดพลาด",
+      "info": "ข้อมูล",
+      "warning": "คำเตือน"
+    },
+    "toastMessages": {
+      "success": "บันทึกการเปลี่ยนแปลงเรียบร้อย",
+      "error": "ส่งข้อมูลไม่สำเร็จ กรุณาลองอีกครั้ง",
+      "info": "มีเวอร์ชันใหม่ให้อัปเดตแล้ว",
+      "warning": "แบตเตอรี่เหลือน้อย อาจอัปโหลดไม่เสร็จ"
+    },
+    "toastWithTitle": "มีหัวข้อ",
+    "toastWithTitleHeading": "ชำระเงินสำเร็จ",
+    "toastWithTitleMessage": "ยอดชำระ ฿1,250.00 ร้านจะเริ่มเตรียมสินค้าทันที",
+    "toastSticky": "ไม่ปิดเอง",
+    "toastStickyMessage": "toast นี้จะอยู่จนกว่าจะกดปิด",
+    "toastHideAll": "ปิดทั้งหมด",
+    "toastPreview": "หน้าตาของ Toast แต่ละประเภท (แสดงค้างไว้)",
+    "previewTitle": "หัวข้อของ toast",
+    "previewMessage": "ตัวอย่างข้อความประเภท {{type}}",
+    "dialogTitle": "Dialog",
+    "dialogDescription": "useDialog().alert / confirm คืนค่าเป็น Promise ผลลัพธ์แสดงด้วย toast",
+    "openAlert": "แจ้งเตือน",
+    "openConfirm": "ขอยืนยัน",
+    "openDelete": "ลบข้อมูล",
+    "openCustom": "กำหนดเอง",
+    "alertTitle": "อัปเดตข้อมูลแล้ว",
+    "alertMessage": "ข้อมูลโปรไฟล์ของคุณถูกบันทึกเรียบร้อย",
+    "alertClosed": "ปิดกล่องแจ้งเตือนแล้ว",
+    "confirmTitle": "ออกจากหน้านี้?",
+    "confirmMessage": "ข้อมูลที่ยังไม่บันทึกจะหายไป",
+    "deleteTitle": "ลบที่อยู่นี้?",
+    "deleteMessage": "ลบแล้วกู้คืนไม่ได้",
+    "resultConfirmed": "ผลลัพธ์: ยืนยัน",
+    "resultCancelled": "ผลลัพธ์: ยกเลิก",
+    "customTitle": "ยกเลิกคำสั่งซื้อ",
+    "customMessage": "บอกเหตุผลเพื่อให้เราปรับปรุงบริการ",
+    "reasonLabel": "เหตุผล",
+    "reasons": {
+      "price": "ราคาสูงกว่าที่อื่น",
+      "quality": "สินค้าไม่ตรงกับที่ต้องการ",
+      "other": "เหตุผลอื่น"
+    },
+    "customSubmit": "ส่งเหตุผล",
+    "customLater": "ไว้ทีหลัง",
+    "customResult": "ส่งเหตุผลแล้ว: {{reason}}",
+    "overlayDescription": "คลุมทั้งหน้าและกันการแตะ 1.5 วินาที (วางผ่าน Screen overlay)",
+    "showOverlay": "แสดง LoadingOverlay",
+    "overlayMessage": "กำลังบันทึกข้อมูล...",
+    "emptyTitle": "ยังไม่มีสินค้าในตะกร้า",
+    "emptyDescription": "เลือกสินค้าที่ชอบแล้วกลับมาชำระเงินที่นี่",
+    "emptyAction": "เลือกซื้อสินค้า",
+    "errorDescription": "ใช้ ApiError ชนิด network จำลอง กดลองอีกครั้งแล้วปุ่มจะหมุน 1 วินาที",
+    "retryFailed": "ยังเชื่อมต่อไม่ได้ (ตัวอย่าง)",
+    "offlineDescription": "แถบนี้แสดงเองเมื่อไม่มีอินเทอร์เน็ต ลองเปิดโหมดเครื่องบินเพื่อดู",
+    "networkStatus": "สถานะตอนนี้: {{status}} ({{type}})",
+    "statusOnline": "ออนไลน์",
+    "statusOffline": "ออฟไลน์"
+  },
+  "sheets": {
+    "formTitle": "สูงตามเนื้อหา",
+    "formDescription": "ไม่ใส่ snapPoints แล้ว sheet สูงเท่าเนื้อหา มีช่องกรอกข้อความข้างใน",
+    "openForm": "เปิด sheet แก้ไขที่อยู่",
+    "formSheetTitle": "ตั้งชื่อที่อยู่",
+    "addressLabel": "ชื่อที่อยู่",
+    "addressPlaceholder": "เช่น บ้าน ที่ทำงาน",
+    "searchPlaceholder": "ค้นหาพื้นที่จัดส่ง",
+    "keyboardNote": "TextField ยังไม่เลื่อน sheet หนีคีย์บอร์ด (ใช้ TextInput ธรรมดา) ส่วน SearchBar ใช้ BottomSheetTextInput จึงเลื่อนได้",
+    "saved": "บันทึกชื่อที่อยู่: {{label}}",
+    "listTitle": "เลื่อนดูได้",
+    "listDescription": "snapPoints 50% / 90% และ scrollable (BottomSheetScrollView)",
+    "openList": "เปิด sheet รายการยาว",
+    "listSheetTitle": "เลือกพัสดุ",
+    "listItem": "พัสดุชิ้นที่ {{index}}",
+    "listItemDetail": "แตะเพื่อเลือกแล้วปิด sheet",
+    "selectTitle": "Select ในหน้า",
+    "selectDescription": "กดแล้วเปิด sheet ของตัวเลือกขึ้นมาเอง",
+    "deliveryProvince": "จังหวัดปลายทาง"
+  },
+  "nativewind": {
+    "compareTitle": "className เทียบกับ StyleSheet",
+    "compareDescription": "สีใน className เป็นชื่อ token เท่านั้น (ไม่มี bg-blue-500) ใช้ร่วมกับ style ได้ และ style ชนะเมื่อชนกัน",
+    "sampleText": "กล่องข้อความตัวอย่าง",
+    "spacingTitle": "ระยะห่าง (gap / padding)",
+    "spacingDescription": "ใช้ scale ของ Tailwind ที่เป็นหน่วย rem ดูค่าจริงของ 1rem บนเครื่องนี้ได้จากแถบด้านล่าง",
+    "remMeasuring": "กำลังวัดขนาด...",
+    "remMeasured": "w-16 (4rem) วัดได้ {{width}} dp จึง 1rem = {{rem}} dp (spacing token ของแอป: lg = 16)",
+    "themeTitle": "สลับธีมอัตโนมัติ",
+    "themeDescription": "className อ่านสีจาก CSS variables ของธีมปัจจุบัน สลับธีมด้านบนแล้วสีเปลี่ยนทันทีโดยไม่ต้องเขียน dark: เอง",
+    "textTitle": "ตัวอักษรใช้ props ไม่ใช้ className",
+    "textDescription": "Text ของแอปกำหนดฟอนต์ ขนาด และสีผ่าน style เสมอ className ด้านตัวอักษรบน Text จึงไม่มีผล ใช้ variant / color / weight แทน",
+    "overriddenSample": "className ไม่มีผล",
+    "propsSample": "ใช้ props แทน"
+  },
+  "responsive": {
+    "hookDescription": "คำนวณจากขนาดหน้าต่างปัจจุบัน อัปเดตเมื่อหมุนจอ",
+    "barLabel": "แถบกว้าง wp(50) = ครึ่งหนึ่งของความกว้างจอ",
+    "staticDescription": "wp / hp จำขนาดจอตอนเปิดแอป ไม่เปลี่ยนเมื่อหมุนจอ ใช้ useResponsive() กับหน้าที่หมุนได้"
+  }
+}

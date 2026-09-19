@@ -1,0 +1,41 @@
+{
+  "greeting": "Hello, {{name}}",
+  "greetingGuest": "Hello",
+  "subtitle": "This is the starter home screen. Tap a shortcut below to explore each part.",
+  "loadingUser": "Loading user information",
+  "quickActions": "Shortcuts",
+  "actions": {
+    "products": {
+      "title": "Products",
+      "description": "List, search and details"
+    },
+    "gallery": {
+      "title": "Components",
+      "description": "Every UI piece in the app"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Theme, language and account"
+    },
+    "docs": {
+      "title": "Docs",
+      "description": "React Native guide"
+    }
+  },
+  "docsTitle": "React Native docs",
+  "stack": {
+    "title": "Stack in this starter",
+    "description": "Key libraries, already configured and ready to use",
+    "core": "Core",
+    "data": "Navigation and data",
+    "ui": "UI and animation",
+    "tooling": "Forms, i18n and testing"
+  },
+  "stats": {
+    "title": "Number and date formatting",
+    "description": "Formatted with utils/format. Thai shows Buddhist Era years.",
+    "currency": "Total sales",
+    "number": "Visitors",
+    "date": "Today"
+  }
+}

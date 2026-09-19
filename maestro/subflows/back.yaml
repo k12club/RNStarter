@@ -1,0 +1,14 @@
+# ย้อนกลับหนึ่งหน้าให้ได้ทั้งสองแพลตฟอร์ม
+# Android มีปุ่ม back ของระบบ ส่วน iOS ต้องแตะปุ่มย้อนกลับของ header (label ตามภาษาเครื่อง)
+appId: com.rnstarter
+---
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - back
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+      - tapOn: 'Back|ย้อนกลับ'

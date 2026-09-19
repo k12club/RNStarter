@@ -1,0 +1,45 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Kanit-Bold.ttf",
+      "sha1": "1c480c4038346537012dbcc4425d33682a5831cd"
+    },
+    {
+      "path": "src/assets/fonts/Kanit-Light.ttf",
+      "sha1": "5e2cc4f979cbee5d18c11718db1e27b396d5af98"
+    },
+    {
+      "path": "src/assets/fonts/Kanit-Medium.ttf",
+      "sha1": "97ad7eaa282791d6b3f4413da07dc05c78c32aa7"
+    },
+    {
+      "path": "src/assets/fonts/Kanit-Regular.ttf",
+      "sha1": "6dda8081dfd9a6a053a6f947cc95cfbd4ca5842c"
+    },
+    {
+      "path": "src/assets/fonts/Kanit-SemiBold.ttf",
+      "sha1": "33f83accd1bae19d6f64e95c47ecd8510b07f15d"
+    },
+    {
+      "path": "src/assets/fonts/Sarabun-Bold.ttf",
+      "sha1": "9b92153e2af7a2d68549ba6b5d046d4cc37d0c52"
+    },
+    {
+      "path": "src/assets/fonts/Sarabun-Light.ttf",
+      "sha1": "95e18ace6935d88106cf075acf95f92f37d132a5"
+    },
+    {
+      "path": "src/assets/fonts/Sarabun-Medium.ttf",
+      "sha1": "ce6dde9cf2eb6fd1ab3169659f6eb684e9d54a12"
+    },
+    {
+      "path": "src/assets/fonts/Sarabun-Regular.ttf",
+      "sha1": "b0b18564f13c625d43d6945351041fe2252c13ae"
+    },
+    {
+      "path": "src/assets/fonts/Sarabun-SemiBold.ttf",
+      "sha1": "60495d76386fad475447b50bdea0f3a648d0d2a1"
+    }
+  ]
+}

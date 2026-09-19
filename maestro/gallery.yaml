@@ -1,0 +1,17 @@
+# เปิดหน้า Component Gallery ได้โดยไม่ต้อง login
+# หน้า gallery รวมทุก component ไว้ใช้ตรวจหน้าตา UI (ภาษาไทยไม่ถูกตัด, ไม่ล้นจอ, ธีมมืด)
+appId: com.rnstarter
+---
+- launchApp:
+    clearState: true
+    clearKeychain: true
+- extendedWaitUntil:
+    visible: 'เข้าสู่ระบบ'
+    timeout: 30000
+- tapOn:
+    id: 'login-open-gallery'
+- extendedWaitUntil:
+    visible:
+      id: 'gallery-scroll'
+    timeout: 15000
+- takeScreenshot: gallery-top

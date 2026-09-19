@@ -1,0 +1,40 @@
+{
+  "title": "Settings",
+  "appearance": {
+    "title": "Appearance",
+    "description": "Choose a light or dark theme, or follow your device setting",
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "title": "Language",
+    "description": "The language used throughout the app"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "demoCaption": "This section only demonstrates the Switch component. Your choices are not saved and no notifications are sent.",
+    "pushLabel": "Push notifications",
+    "pushDescription": "Get notified about new orders and messages",
+    "emailLabel": "Weekly email summary",
+    "emailDescription": "A summary of your account activity every Monday",
+    "promotionsLabel": "News and promotions",
+    "promotionsDescription": "Special offers and new products you may like"
+  },
+  "data": {
+    "title": "Data",
+    "clearCache": "Clear cache",
+    "clearCacheDescription": "Remove temporarily stored data. It will be loaded again when you open that screen."
+  },
+  "cacheCleared": "Cache cleared",
+  "about": {
+    "title": "About",
+    "version": "App version",
+    "buildNumber": "Build number",
+    "bundleId": "Bundle ID",
+    "environment": "Environment",
+    "apiUrl": "API URL",
+    "reactNativeVersion": "React Native version"
+  }
+}

@@ -1,0 +1,46 @@
+# ตรวจคุณภาพโค้ดทุก merge request และทุก push เข้า main
+# (ยังไม่มีขั้น build native / deploy: เพิ่มเองตามโปรเจกต์)
+image: node:22
+
+stages:
+  - verify
+
+variables:
+  npm_config_cache: '$CI_PROJECT_DIR/.npm'
+
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - .npm/
+
+.verify:
+  stage: verify
+  before_script:
+    - npm ci --ignore-scripts
+    # .env ไม่ถูก commit: ใช้ค่าจาก .env.example (react-native-dotenv อ่านตอน transform)
+    - cp .env.example .env
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+typecheck:
+  extends: .verify
+  script:
+    - npm run typecheck
+
+lint:
+  extends: .verify
+  script:
+    - npm run lint
+
+test:
+  extends: .verify
+  script:
+    - npm test -- --ci --coverage
+  artifacts:
+    when: always
+    paths:
+      - coverage/
+    expire_in: 7 days

@@ -1,0 +1,17 @@
+diff --git a/node_modules/react-native-css-interop/dist/runtime/components.js b/node_modules/react-native-css-interop/dist/runtime/components.js
+index 7bb1ae4..67eaaee 100644
+--- a/node_modules/react-native-css-interop/dist/runtime/components.js
++++ b/node_modules/react-native-css-interop/dist/runtime/components.js
+@@ -31,10 +31,8 @@ const api_1 = require("./api");
+     columnWrapperClassName: "columnWrapperStyle",
+     contentContainerClassName: "contentContainerStyle",
+ });
+-(0, api_1.remapProps)(react_native_1.ImageBackground, {
+-    className: "style",
+-    imageClassName: "imageStyle",
+-});
++// patch-package (RNStarter): RN 0.87 เตือน "ImageBackground is deprecated" ทุกครั้งที่อ่าน export นี้
++// จึงไม่ลงทะเบียน className ให้ ImageBackground (แอปไม่ใช้ ใช้ View + Image แทน)
+ (0, api_1.remapProps)(react_native_1.KeyboardAvoidingView, {
+     className: "style",
+     contentContainerClassName: "contentContainerStyle",
